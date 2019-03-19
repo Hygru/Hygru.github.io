@@ -3,8 +3,15 @@
 
 
     <url>
-        <loc>https://Hygru.github.io/tags/Django/</loc>
-        <lastmod>2019-03-04T07:36:46.515Z</lastmod>
+        <loc>https://Hygru.github.io/tags/Python/</loc>
+        <lastmod>2019-03-19T15:40:22.859Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://Hygru.github.io/tags/%E5%8D%8F%E7%A8%8B/</loc>
+        <lastmod>2019-03-19T15:40:22.859Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
