@@ -4,17 +4,22 @@
 
     <sitemap>
         <loc>https://Hygru.github.io/post-sitemap.xml</loc>
-        <lastmod>2020-04-19T08:38:17.287Z</lastmod>
+        <lastmod>2020-04-19T09:22:39.140Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>https://Hygru.github.io/page-sitemap.xml</loc>
-        <lastmod>2020-04-14T16:31:37.594Z</lastmod>
+        <lastmod>2020-04-19T09:18:38.810Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>https://Hygru.github.io/category-sitemap.xml</loc>
+        <lastmod>2020-04-19T09:21:36.404Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>https://Hygru.github.io/tag-sitemap.xml</loc>
-        <lastmod>2019-12-29T08:00:38.269Z</lastmod>
+        <lastmod>2020-04-19T09:21:36.404Z</lastmod>
     </sitemap>
 
 </sitemapindex>
