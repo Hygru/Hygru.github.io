@@ -3,6 +3,13 @@
 
 
     <url>
+        <loc>https://Hygru.github.io/tags/Python/</loc>
+        <lastmod>2019-12-29T08:00:38.269Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://Hygru.github.io/tags/%E5%8D%8F%E7%A8%8B/</loc>
         <lastmod>2019-12-29T08:00:38.269Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -19,34 +26,6 @@
     <url>
         <loc>https://Hygru.github.io/tags/Docker/</loc>
         <lastmod>2019-12-29T08:00:38.270Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://Hygru.github.io/tags/Python/</loc>
-        <lastmod>2019-12-29T08:00:38.272Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://Hygru.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
-        <lastmod>2019-12-29T08:00:38.272Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://Hygru.github.io/tags/flask/</loc>
-        <lastmod>2019-12-29T08:00:38.273Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://Hygru.github.io/tags/%E5%BA%8F%E5%88%97%E5%8C%96/</loc>
-        <lastmod>2019-12-29T08:00:38.273Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

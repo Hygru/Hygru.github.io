@@ -142,13 +142,6 @@
 
                         
                         <li>
-                            <a href="/categories/">Category</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/archive/">Archives</a>
                         </li>
                         
@@ -157,6 +150,13 @@
                         
                         <li>
                             <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">Category</a>
                         </li>
                         
                     
@@ -219,21 +219,24 @@
 
 <div class="post-preview">
 
-    <a href="/article/Python-魔法函数之-slots/">
+    <a href="/article/Flask搭建restful-API服务-一-Flask安装及基础配置/">
         <h2 class="post-title">
-            Python---魔法函数之 __slots__
+            Flask搭建restful API服务(一):Flask安装及基础配置
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            ...
+            一、安装Flask
+1pip install flask
+二、构建项目目录
+1234567891011----projectName    |----app         |----__init__.py         |----api           # 接口文件夹         |----models        # 数据库模型文件夹    |----conf        ......
         </div>
     </a>
     
         <p class="post-meta" style="margin: 10px 0;">
             Posted by Hygru on
-            2019-12-24
+            2020-04-14
         </p>
         <div class="tags">
             
@@ -245,29 +248,31 @@
 
 <div class="post-preview">
 
-    <a href="/article/Flask模型json序列化/">
+    <a href="/article/Flask集成Celery异步任务框架/">
         <h2 class="post-title">
-            Flask模型json序列化
+            Flask集成Celery异步任务框架
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            在构建flask restful API 服务时，需要将sqlachemy的模型数据序列化成JSON数据格式，为此，需要重写jsonify的JSONEncoder方法来实现。
-一、在model基类中提供todict方法
-...
+            一、docker安装redis、rabbitMq
+
+docker安装redis
+
+123docker pull redisdocker run -d -p 6379:6379 --name myredis redis
+
+docker安装rabbitq
+
+123docker pull rabbitmq:managementdocker run -d -p 5672:5672 -p 15672:......
         </div>
     </a>
     
         <p class="post-meta" style="margin: 10px 0;">
             Posted by Hygru on
-            2019-08-31
+            2020-04-14
         </p>
         <div class="tags">
-            
-              <a href="/tags/#flask" title="flask">flask</a>
-            
-              <a href="/tags/#序列化" title="序列化">序列化</a>
             
         </div>
     
@@ -303,36 +308,6 @@
               <a href="/tags/#MySQL" title="MySQL">MySQL</a>
             
               <a href="/tags/#Docker" title="Docker">Docker</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/Python-多线程/">
-        <h2 class="post-title">
-            Python--多线程
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            ...
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by Hygru on
-            2019-03-20
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#Python" title="Python">Python</a>
-            
-              <a href="/tags/#多线程" title="多线程">多线程</a>
             
         </div>
     
@@ -417,14 +392,6 @@ yield关键......
         
             
         
-            
-            <a href="/tags/#Python" title="Python" rel="2">Python</a>
-            
-        
-            
-        
-            
-        
     </div>
 </section>
 
@@ -476,19 +443,15 @@ yield关键......
     <ul>
       
         <li>
-          <a href="/article/Python-魔法函数之-slots/">Python---魔法函数之 __slots__</a>
+          <a href="/article/Flask搭建restful-API服务-一-Flask安装及基础配置/">Flask搭建restful API服务(一):Flask安装及基础配置</a>
         </li>
       
         <li>
-          <a href="/article/Flask模型json序列化/">Flask模型json序列化</a>
+          <a href="/article/Flask集成Celery异步任务框架/">Flask集成Celery异步任务框架</a>
         </li>
       
         <li>
           <a href="/article/Docker安装mysql5-7/">Docker安装mysql5.7</a>
-        </li>
-      
-        <li>
-          <a href="/article/Python-多线程/">Python--多线程</a>
         </li>
       
         <li>
@@ -507,7 +470,7 @@ yield关键......
         
     <h5>ARCHIVES</h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li></ul>
     </div>
 
         <hr>
