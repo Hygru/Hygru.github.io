@@ -19,7 +19,7 @@
         
     </title>
 
-    <link rel="canonical" href="https://Hygru.github.io/flask/Flask搭建restful-API服务-二-数据库配置与操作/">
+    <link rel="canonical" href="https://Hygru.github.io/articles/Flask搭建restful-API服务-二-数据库配置与操作/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -147,14 +147,14 @@
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
@@ -229,7 +229,7 @@
 <p>安装pymsql、flask-sqlalchemy、flask-migrate、flask-script</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pip install pymysql</span><br><span class="line"></span><br><span class="line">pip install flask-sqlalchemy</span><br><span class="line"></span><br><span class="line">pip install flask-migrate</span><br><span class="line"></span><br><span class="line">pip install flask-script</span><br></pre></td></tr></table></figure>
 <h3 id="二-修改项目目录与文件">二、修改项目目录与文件</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">----projectName</span><br><span class="line">    |----app</span><br><span class="line">         |----__init__.py</span><br><span class="line">         |----api           # 接口文件夹</span><br><span class="line">         |----models        # 数据库模型文件夹</span><br><span class="line">    |----conf               # 项目配置文件夹</span><br><span class="line">         |----config.py     # 项目配置文件夹</span><br><span class="line">    |----lib                # 自定义模块文件夹</span><br><span class="line">         |----db.py</span><br><span class="line">    |----utils              # 工具文件夹</span><br><span class="line">    |----manage.py          # 项目入口文件</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">----projectName</span><br><span class="line">    |----app</span><br><span class="line">         |----__init__.py</span><br><span class="line">         |----api           # 接口文件夹</span><br><span class="line">              |----views.py</span><br><span class="line">         |----models        # 数据库模型文件夹</span><br><span class="line">    |----conf               # 项目配置文件夹</span><br><span class="line">         |----config.py     # 项目配置文件夹</span><br><span class="line">    |----lib                # 自定义模块文件夹</span><br><span class="line">         |----db.py</span><br><span class="line">    |----utils              # 工具文件夹</span><br><span class="line">    |----manage.py          # 项目入口文件</span><br></pre></td></tr></table></figure>
 <h3 id="三-添加mysql数据库配置信息">三、添加MySQL数据库配置信息</h3>
 <p>在conf/config.py文件中填写不同运行环境下对应的配置信息，如开发环境下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DevelopmentConfig</span><span class="params">(Config)</span>:</span>  </span><br><span class="line">    MYSQL_HOST = <span class="string">'localhost'</span></span><br><span class="line">    MYSQL_PORT = <span class="string">'3306'</span></span><br><span class="line">    USER = <span class="string">'root'</span></span><br><span class="line">    PASSWORD = <span class="string">'******'</span></span><br><span class="line">    DATABASE = <span class="string">'database_name'</span></span><br><span class="line"></span><br><span class="line">    SQLALCHEMY_DATABASE_URI = <span class="string">'mysql+pymysql://'</span> + USER + <span class="string">':'</span> + PASSWORD + <span class="string">'@'</span> + MYSQL_HOST + <span class="string">':'</span> + MYSQL_PORT + <span class="string">'/'</span> + DATABASE + <span class="string">'?charset=utf8'</span></span><br><span class="line">    SQLALCHEMY_COMMIT_ON_TEARDOWN = <span class="keyword">True</span></span><br><span class="line">    SQLALCHEMY_TRACK_MODIFICATIONS = <span class="keyword">True</span></span><br></pre></td></tr></table></figure>
@@ -257,9 +257,13 @@
                 <!-- Pager -->
                 <ul class="pager">
                     
+                        <li class="previous">
+                            <a href="/articles/Flask搭建restful-API服务-三-flask-restplus安装与配置/" data-toggle="tooltip" data-placement="top" title="Flask搭建restful API服务(三):flask-restplus安装与配置">&larr; Previous Post</a>
+                        </li>
+                    
                     
                         <li class="next">
-                            <a href="/flask/Flask搭建restful-API服务-一-Flask安装及基础配置/" data-toggle="tooltip" data-placement="top" title="Flask搭建restful API服务(一):Flask安装及基础配置">Next Post &rarr;</a>
+                            <a href="/articles/Flask搭建restful-API服务-一-Flask安装及基础配置/" data-toggle="tooltip" data-placement="top" title="Flask搭建restful API服务(一):Flask安装及基础配置">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
