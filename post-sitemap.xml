@@ -8,15 +8,23 @@
     </url>
 
     <url>
-        <loc>https://Hygru.github.io/article/Flask%E6%90%AD%E5%BB%BArestful-API%E6%9C%8D%E5%8A%A1-%E4%B8%80-Flask%E5%AE%89%E8%A3%85%E5%8F%8A%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</loc>
-        <lastmod>2020-04-19T06:33:31.035Z</lastmod>
+        <loc>https://Hygru.github.io/null/Flask%E6%90%AD%E5%BB%BArestful-API%E6%9C%8D%E5%8A%A1-%E4%BA%8C-%E6%95%B0%E6%8D%AE%E5%BA%93%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%93%8D%E4%BD%9C/</loc>
+        <lastmod>2020-04-19T08:38:17.287Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://Hygru.github.io/article/Flask%E9%9B%86%E6%88%90Celery%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1%E6%A1%86%E6%9E%B6/</loc>
+        <loc>https://Hygru.github.io/null/Flask%E6%90%AD%E5%BB%BArestful-API%E6%9C%8D%E5%8A%A1-%E4%B8%80-Flask%E5%AE%89%E8%A3%85%E5%8F%8A%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</loc>
+        <lastmod>2020-04-19T07:29:46.240Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://Hygru.github.io/null/Flask%E9%9B%86%E6%88%90Celery%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1%E6%A1%86%E6%9E%B6/</loc>
         <lastmod>2020-04-14T15:33:52.160Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -24,7 +32,7 @@
     </url>
 
     <url>
-        <loc>https://Hygru.github.io/article/Docker%E5%AE%89%E8%A3%85mysql5-7/</loc>
+        <loc>https://Hygru.github.io/null/Docker%E5%AE%89%E8%A3%85mysql5-7/</loc>
         <lastmod>2019-12-29T08:00:38.270Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -32,7 +40,7 @@
     </url>
 
     <url>
-        <loc>https://Hygru.github.io/article/Python-%E5%8D%8F%E7%A8%8B/</loc>
+        <loc>https://Hygru.github.io/null/Python-%E5%8D%8F%E7%A8%8B/</loc>
         <lastmod>2019-12-29T08:00:38.269Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
