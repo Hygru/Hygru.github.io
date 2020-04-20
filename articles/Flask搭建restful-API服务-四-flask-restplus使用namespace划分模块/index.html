@@ -15,11 +15,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          Docker安装mysql5.7 - Hygru | Blog
+          Flask搭建restful API服务(四):flask-restplus使用namespace划分模块 - Hygru | Blog
         
     </title>
 
-    <link rel="canonical" href="https://Hygru.github.io/articles/Docker安装mysql5-7/">
+    <link rel="canonical" href="https://Hygru.github.io/articles/Flask搭建restful-API服务-四-flask-restplus使用namespace划分模块/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -89,16 +89,18 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#MySQL" title="MySQL">MySQL</a>
+                              <a class="tag" href="/tags/#flask" title="flask">flask</a>
                             
-                              <a class="tag" href="/tags/#Docker" title="Docker">Docker</a>
+                              <a class="tag" href="/tags/#restful" title="restful">restful</a>
+                            
+                              <a class="tag" href="/tags/#namespace" title="namespace">namespace</a>
                             
                         </div>
-                        <h1>Docker安装mysql5.7</h1>
+                        <h1>Flask搭建restful API服务(四):flask-restplus使用namespace划分模块</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by Hygru on
-                            2019-08-18
+                            2020-04-20
                         </span>
                     </div>
                 
@@ -222,26 +224,20 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>使用docker搭建开发环境, 记录下docker安装MySQL5.7的过程。</p>
-<h3 id="一-获取mysql57镜像">一、获取MySQL5.7镜像</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull mysql/mysql-server:5.7</span><br></pre></td></tr></table></figure>
-<p>可选择MySQL版本号</p>
-<h3 id="二-创建mysql容器">二、创建MySQL容器</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run --name mysql5.7 -p 3307:3306 -v ./conf:/etc/mysql/conf.d -v ./logs:/logs -v ./data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql/mysql-server:5.7</span><br></pre></td></tr></table></figure>
-<p>参数：</p>
-<ul>
-<li>–name 容器名称</li>
-<li>-p 3307:3006 指定端口号，物理机端口:容器内部端口</li>
-<li>-v ./conf:/etc/mysql/conf.d 将主机当前目录下的/conf挂载到容器的/etc/mysql/conf.d （配置文件目录）</li>
-<li>-v ./logs:/logs 将主机当前目录下的/logs挂载到容器的/logs （日志文件目录）</li>
-<li>-v ./data:/var/lib/mysql 将当前目录下的/data目录挂载到容器的/var/lib/mysql (数据库文件存放目录)</li>
-<li>-e 运行参数 初始化 root 用户的密码</li>
-<li>-d 后台运行 mysql/mysql-server:5.7 下载的镜像名字加标签</li>
-</ul>
-<h3 id="三-允许外部远程连接">三、允许外部远程连接</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it mysql5.7 bash   // 进入容器mysql控制台</span><br><span class="line"></span><br><span class="line">mysql -u root -p                // 登录mysql</span><br><span class="line"></span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; identified by &apos;123456&apos; WITH GRANT OPTION;</span><br><span class="line"></span><br><span class="line">FLUSH PRIVILEGES;   //刷新配置</span><br></pre></td></tr></table></figure>
-<h3 id="四-本机连接容器数据库">四、本机连接容器数据库</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p -h 127.0.0.1 -P 3307</span><br></pre></td></tr></table></figure>
+                <p>通常开发一个项目，为了使项目开发更加清晰流畅，会根据接口的功能划分到不同模块当中。在这我们使用flask-restplus中的namespace来进行模块的划分。</p>
+<h3 id="一-构建模块目录">一、构建模块目录</h3>
+<p>在<code>app/api</code>目录下新建user文件夹来存放于用户相关的接口文件</p>
+<h3 id="二-初始化namespace实例">二、初始化Namespace实例</h3>
+<p>在<code>app/api/user</code>目录下添加<code>__init__.py</code>文件，在其中引入<code>api</code>并初始化<code>namespace</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask_restplus <span class="keyword">import</span> Namespace</span><br><span class="line"></span><br><span class="line">user_ns = Namespace(<span class="string">'user'</span>, description=<span class="string">'用户相关的api接口'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> UserResource</span><br></pre></td></tr></table></figure>
+<h3 id="三-用namespace实例创建接口">三、用Namespace实例创建接口</h3>
+<p>在user目录下添加<code>UserResource.py</code>文件，并将<code>api/views.py</code>内的内容迁移到<code>UserResource.py</code>文件中。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> jsonify</span><br><span class="line"><span class="keyword">from</span> flask_restplus <span class="keyword">import</span> Resource</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> user_ns <span class="keyword">as</span> ns</span><br><span class="line"></span><br><span class="line"><span class="meta">@ns.route('/&lt;int:id&gt;')</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserResource</span><span class="params">(Resource)</span>:</span></span><br><span class="line">    <span class="comment"># HTTP协议的请求方法对应resource类下的方法，如下面的get方法则对应GET请求</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, id)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> jsonify(&#123;<span class="string">'userId'</span>: id&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="四-将namespace实例添加到api中">四、将Namespace实例添加到api中</h3>
+<p>在<code>app/api/__init__.py</code>文件中添加<code>namespace</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask_restplus <span class="keyword">import</span> Api</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> .user <span class="keyword">import</span> user_ns</span><br><span class="line"></span><br><span class="line">api = Api()</span><br><span class="line"></span><br><span class="line">api.add_namespace(user_ns)</span><br></pre></td></tr></table></figure>
+<h3 id="五-验证namespace配置">五、验证Namespace配置</h3>
+<p>启动项目后再浏览器输入<code>127.0.0.0:5000/user/1</code>返回相应的数据则代表使用Namespace划分模块成功。</p>
 
                 
 
@@ -250,12 +246,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/articles/Flask集成Celery异步任务框架/" data-toggle="tooltip" data-placement="top" title="Flask集成Celery异步任务框架">&larr; Previous Post</a>
+                            <a href="/articles/Flask搭建restful-API服务-五-结合Blueprint划分接口版本/" data-toggle="tooltip" data-placement="top" title="Flask搭建restful API服务(五):结合Blueprint划分接口版本">&larr; Previous Post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/articles/Python-协程/" data-toggle="tooltip" data-placement="top" title="Python--协程">Next Post &rarr;</a>
+                            <a href="/articles/Flask搭建restful-API服务-三-flask-restplus安装与配置/" data-toggle="tooltip" data-placement="top" title="Flask搭建restful API服务(三):flask-restplus安装与配置">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -311,7 +307,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#一-获取mysql57镜像"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">一、获取MySQL5.7镜像</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#二-创建mysql容器"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">二、创建MySQL容器</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#三-允许外部远程连接"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">三、允许外部远程连接</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#四-本机连接容器数据库"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">四、本机连接容器数据库</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#一-构建模块目录"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">一、构建模块目录</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#二-初始化namespace实例"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">二、初始化Namespace实例</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#三-用namespace实例创建接口"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">三、用Namespace实例创建接口</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#四-将namespace实例添加到api中"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">四、将Namespace实例添加到api中</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#五-验证namespace配置"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">五、验证Namespace配置</span></a></li></ol>
         
         </div>
       </aside>
@@ -331,9 +327,11 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#MySQL" title="MySQL">MySQL</a>
+                          <a class="tag" href="/tags/#flask" title="flask">flask</a>
                         
-                          <a class="tag" href="/tags/#Docker" title="Docker">Docker</a>
+                          <a class="tag" href="/tags/#restful" title="restful">restful</a>
+                        
+                          <a class="tag" href="/tags/#namespace" title="namespace">namespace</a>
                         
                     </div>
                 </section>

@@ -135,14 +135,14 @@
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
@@ -216,6 +216,77 @@
             
                 <!-- Main Content -->
 
+
+<div class="post-preview">
+
+    <a href="/articles/Flask搭建restful-API服务-五-结合Blueprint划分接口版本/">
+        <h2 class="post-title">
+            Flask搭建restful API服务(五):结合Blueprint划分接口版本
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            在上一篇文章中，通过namespace对项目模块进行了划分，但很多项目中需要对接口的版本进行统一管理，在路由上区分。这个问题可以通过flask中Blueprint来解决。
+一、新建接口版本目录
+在app/api目录下新建v1文件夹，将user模块放进v1文件夹中，并添加__init__.py文件。
+二、创建Blueprint实例
+在app/api/v1/__init__.py文件中实例化Bl......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by Hygru on
+            2020-04-20
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#flask" title="flask">flask</a>
+            
+              <a href="/tags/#restful" title="restful">restful</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/articles/Flask搭建restful-API服务-四-flask-restplus使用namespace划分模块/">
+        <h2 class="post-title">
+            Flask搭建restful API服务(四):flask-restplus使用namespace划分模块
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            通常开发一个项目，为了使项目开发更加清晰流畅，会根据接口的功能划分到不同模块当中。在这我们使用flask-restplus中的namespace来进行模块的划分。
+一、构建模块目录
+在app/api目录下新建user文件夹来存放于用户相关的接口文件
+二、初始化Namespace实例
+在app/api/user目录下添加__init__.py文件，在其中引入api并初始化namespace
+1......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by Hygru on
+            2020-04-20
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#flask" title="flask">flask</a>
+            
+              <a href="/tags/#restful" title="restful">restful</a>
+            
+              <a href="/tags/#namespace" title="namespace">namespace</a>
+            
+        </div>
+    
+
+</div>
+<hr>
 
 <div class="post-preview">
 
@@ -457,15 +528,17 @@ yield关键......
     <div class="tags">
         
             
+            <a href="/tags/#flask" title="flask" rel="5">flask</a>
+            
+        
+            
+            <a href="/tags/#restful" title="restful" rel="4">restful</a>
+            
         
             
         
             
-            <a href="/tags/#flask" title="flask" rel="3">flask</a>
-            
         
-            
-            <a href="/tags/#restful" title="restful" rel="2">restful</a>
             
         
             
@@ -527,6 +600,14 @@ yield关键......
     <ul>
       
         <li>
+          <a href="/articles/Flask搭建restful-API服务-五-结合Blueprint划分接口版本/">Flask搭建restful API服务(五):结合Blueprint划分接口版本</a>
+        </li>
+      
+        <li>
+          <a href="/articles/Flask搭建restful-API服务-四-flask-restplus使用namespace划分模块/">Flask搭建restful API服务(四):flask-restplus使用namespace划分模块</a>
+        </li>
+      
+        <li>
           <a href="/articles/Flask搭建restful-API服务-三-flask-restplus安装与配置/">Flask搭建restful API服务(三):flask-restplus安装与配置</a>
         </li>
       
@@ -536,14 +617,6 @@ yield关键......
       
         <li>
           <a href="/articles/Flask搭建restful-API服务-一-Flask安装及基础配置/">Flask搭建restful API服务(一):Flask安装及基础配置</a>
-        </li>
-      
-        <li>
-          <a href="/articles/Flask集成Celery异步任务框架/">Flask集成Celery异步任务框架</a>
-        </li>
-      
-        <li>
-          <a href="/articles/Docker安装mysql5-7/">Docker安装mysql5.7</a>
         </li>
       
     </ul>
@@ -558,7 +631,7 @@ yield关键......
         
     <h5>ARCHIVES</h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li></ul>
     </div>
 
         <hr>
@@ -567,7 +640,7 @@ yield关键......
 
     <h5>categories
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Docker/">Docker</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/celery/">celery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/flask/">flask</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Docker/">Docker</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/celery/">celery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/flask/">flask</a><span class="category-list-count">4</span></li></ul>
     </div>
 
 </h5>
